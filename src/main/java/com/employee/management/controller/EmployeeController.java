@@ -1,7 +1,9 @@
 package com.employee.management.controller;
 
+import com.employee.management.model.Vacation;
 import com.employee.management.service.EmployeeService;
 import com.employee.management.model.Employee;
+import com.employee.management.service.VacationService;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
@@ -22,12 +24,17 @@ public class EmployeeController implements Serializable {
     @Inject
     private EmployeeService employeeService;
 
+    @Inject
+    private VacationService vacationService;
+
     private transient List<Employee> employees;
     private Employee selectedEmployee = new Employee();
+    private transient List<Vacation> vacations;
 
     @PostConstruct
     public void init() {
         employees = employeeService.findAll();
+        vacations = vacationService.getLoggedInEmployeeVacation();
         String id = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("id");
         if (id != null) {
             selectedEmployee = employeeService.findById(Long.parseLong(id));
@@ -95,5 +102,13 @@ public class EmployeeController implements Serializable {
 
     public void setSelectedEmployee(Employee selectedEmployee) {
         this.selectedEmployee = selectedEmployee;
+    }
+
+    public List<Vacation> getVacations() {
+        return vacations;
+    }
+
+    public void setVacations(List<Vacation> vacations) {
+        this.vacations = vacations;
     }
 }

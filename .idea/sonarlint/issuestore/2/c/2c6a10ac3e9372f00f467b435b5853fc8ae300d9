@@ -1,7 +1,9 @@
 
-
-java:S1192>"GDefine a constant instead of duplicating this literal "Erreur" 3 times.(ΐ‰Λ§ύÿÿÿÿJ$346bac00-ee5f-4937-a79a-26f795ec7065
-ƒ
-java:S6813"BRemove this field injection and use constructor injection instead.(ΑΊ–όÿÿÿÿJ$cb1e4014-2f07-4c64-b582-3d233b57365c
-n
-java:S1948"2Make "selectedEmployee" transient or serializable.(ΕφΨΤJ$07b79097-7d6f-4546-90b3-b9169c9aceeb
+
+java:S1192E"GDefine a constant instead of duplicating this literal "Erreur" 3 times.(ΐ‰Λ§ύÿÿÿÿ8®ίζ2J$c5e4edc7-1e92-4a03-9ba9-d3f4d307ec3e
+
+java:S6813"BRemove this field injection and use constructor injection instead.(ΑΊ–όÿÿÿÿ8®ίζ2J$c09c64bb-6500-4bfd-acfa-9dc828768d53
+
+java:S6813"BRemove this field injection and use constructor injection instead.(ΑΊ–όÿÿÿÿ8―ίζ2J$f24e9f61-7e59-41ba-a430-8a4b7ecaef4a
+u
+java:S1948"2Make "selectedEmployee" transient or serializable.(ΕφΨΤ8±ίζ2J$320790b3-da1c-48d6-8bd8-9ad01e98e9ff

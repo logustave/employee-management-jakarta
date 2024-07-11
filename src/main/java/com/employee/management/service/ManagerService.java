@@ -34,9 +34,9 @@ public class ManagerService {
         return em.createQuery("SELECT r FROM Manager r", Manager.class).getResultList();
     }
 
-    public Employee findManagerByUsername(String username) {
+    public Manager findManagerByUsername(String username) {
         try {
-            TypedQuery<Employee> query = em.createQuery("SELECT e FROM Employee e WHERE e.username = :username", Employee.class);
+            TypedQuery<Manager> query = em.createQuery("SELECT e FROM Manager e WHERE e.username = :username", Manager.class);
             query.setParameter("username", username);
             return query.getSingleResult();
         }catch (Exception e) {

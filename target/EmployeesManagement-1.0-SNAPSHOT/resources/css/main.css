@@ -48,7 +48,12 @@ body {
 
 .container {
     margin-left: 250px;
-    padding-top: 130px;
+    padding: 1em;
+}
+
+.containerDashboard {
+    margin-left: 250px;
+    padding: 1em;
 }
 
 .title {

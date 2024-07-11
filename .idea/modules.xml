@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AppliGestnEmployes.iml" filepath="$PROJECT_DIR$/AppliGestnEmployes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EmployeesManagement.iml" filepath="$PROJECT_DIR$/EmployeesManagement.iml" />
     </modules>
   </component>
 </project>

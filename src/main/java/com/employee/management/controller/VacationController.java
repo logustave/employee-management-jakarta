@@ -57,6 +57,13 @@ public class VacationController implements Serializable {
         newVacation.setStatus("EN_ATTENTE");
         vacationService.add(newVacation);
 
+        vacationService.sendLeaveRequestNotificationToManager(
+                manager.getEmail(),
+                employee.getName(),
+                newVacation.getStartDate().toString(),
+                newVacation.getEndDate().toString()
+        );
+
         FacesContext.getCurrentInstance().addMessage(null,
                 new FacesMessage(FacesMessage.SEVERITY_INFO, "Succès", "Demande de congé soumise avec succès."));
         newVacation = new Vacation();

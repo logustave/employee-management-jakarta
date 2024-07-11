@@ -1,5 +1,7 @@
 package com.employee.management.service;
 
+import java.util.concurrent.CompletableFuture;
+
 public interface EmailService {
-    void send(String to, String subject, String content);
+    CompletableFuture<Void> send(String to, String subject, String content);
 }

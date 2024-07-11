@@ -2,6 +2,7 @@ package com.employee.management.service;
 
 import com.employee.management.model.Employee;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.context.FacesContext;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
@@ -56,5 +57,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         }catch (Exception e) {
             return null;
         }
+    }
+
+    @Override
+    public Employee getLoggedInEmployee() {
+        String username = (String) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("username");
+        if (username != null) {
+            return findByUsername(username);
+        }
+        return null;
     }
 }

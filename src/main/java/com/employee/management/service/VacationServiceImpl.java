@@ -1,15 +1,19 @@
 package com.employee.management.service;
 
+import com.employee.management.model.Employee;
 import com.employee.management.model.Vacation;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @RequestScoped
 public class VacationServiceImpl implements VacationService {
@@ -21,6 +25,9 @@ public class VacationServiceImpl implements VacationService {
 
     @Inject
     private EmailService emailService;
+
+    @Inject
+    private EmployeeService employeeService;
 
     @Transactional
     public void add(Vacation vacation) {
@@ -57,9 +64,24 @@ public class VacationServiceImpl implements VacationService {
     }
 
     public void sendLeaveRequestNotificationToManager(String managerEmail, String employeeName, String leaveStartDate, String leaveEndDate) {
-        String subject = "Nouvelle demande de congé de " + employeeName;
-        String content = "L'employé " + employeeName + " a demandé un congé du " + leaveStartDate + " au " + leaveEndDate + ".";
-        emailService.send(managerEmail, subject, content);
+        String subject = "Demande de congé de l'employé " + employeeName;
+        String content = "Date : " + leaveStartDate + " au " + leaveEndDate + ".";
+        CompletableFuture<Void> future = emailService.send(managerEmail, subject, content);
+        future.thenAccept(result -> log.info("mail send")).exceptionally(ex -> {
+            log.error("mail send error");
+            return null;
+        });
+
+    }
+
+    public List<Vacation> getLoggedInEmployeeVacation() {
+        Employee employee = employeeService.getLoggedInEmployee();
+        if (employee != null) {
+            TypedQuery<Vacation> query = em.createQuery("SELECT c FROM Vacation c WHERE c.employee = :employee", Vacation.class);
+            query.setParameter("employee", employee);
+            return query.getResultList();
+        }
+        return new ArrayList<>();
     }
 
 }

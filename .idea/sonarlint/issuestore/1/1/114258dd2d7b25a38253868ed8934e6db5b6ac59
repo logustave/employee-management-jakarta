@@ -1,7 +1,12 @@
 
 Š
-java:S6813"BRemove this field injection and use constructor injection instead.(Áº–Žüÿÿÿÿ8×œå’Š2J$cdfd89b7-f1e8-4cf9-8921-deece18917f4
+java:S6813"BRemove this field injection and use constructor injection instead.(Áº–Žüÿÿÿÿ8’‡¬šŠ2J$a74de82f-a491-4383-9bd7-f93b2628e872
 Š
-java:S6813 "BRemove this field injection and use constructor injection instead.(Áº–Žüÿÿÿÿ8×œå’Š2J$155a1a24-71cc-4737-9a71-02e7d9a896c9
+java:S6813 "BRemove this field injection and use constructor injection instead.(Áº–Žüÿÿÿÿ8’‡¬šŠ2J$5c025c56-077a-4bd1-a780-183993a84203
 h
-java:S1948"%Make "log" transient or serializable.(ÈÆÛÕ8ìíñ’Š2J$f71be2f4-90ac-4010-882a-b2ef5894d573
+java:S1948"%Make "log" transient or serializable.(ÈÆÛÕ8’‡¬šŠ2J$384d46ba-1e7b-48b4-9e35-adb6e6c3db00
+X	java:S125E"<This block of commented-out lines of code should be removed.(ÿœ­Œ8ž‰óšŠ2
+^
+java:S1128"BRemove this unused import 'com.employee.management.model.Manager'.(ö¹ú8 ‰óšŠ2
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8 ‰óšŠ2

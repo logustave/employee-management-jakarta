@@ -66,14 +66,12 @@ public class LoginController implements Serializable {
             return "/views/admin/indexEmploye.xhtml?faces-redirect=true";
         }
 
-        List<Manager> managers = managerService.findAll();
-        for (Manager manager : managers) {
-            if (manager.getFullName().equals(username) && manager.getPassword().equals(password)) {
-                role = "MANAGER";
-                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("username", username);
-                return "/views/admin/index.xhtml?faces-redirect=true";
-            }
-        }
+//        Manager manager = managerService.findManagerByUsername(username);
+//        if (manager != null && manager.getPassword().equals(password)) {
+//            role = "MANAGER";
+//            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("username", username);
+//            return "/views/admin/index.xhtml?faces-redirect=true";
+//        }
 
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Invalid username or password"));
         return null;
