@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<ui:composition template="/resources/tpl/adminEmploye.xhtml">
+
+    <ui:define name="title">
+        <title>Demande de Congé</title>
+    </ui:define>
+
+    <ui:define name="main">
+
+        <p:outputPanel id="container" styleClass="container">
+
+            <div class="title">
+                Liste des Demandes de Conges
+            </div>
+
+            <h:form id="vacationListForm">
+                <p:panel header="Liste des Demandes de Congé">
+                    <p:dataTable id="vacationTable" value="#{vacationController.pendingVacations}" var="vacation" rows="10" paginator="true" rowsPerPageTemplate="5,10,15">
+                        <p:column headerText="Employé">
+                            <h:outputText value="#{vacation.employee.name}" />
+                        </p:column>
+                        <p:column headerText="Date de Début">
+                            <h:outputText value="#{vacation.startDate}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column headerText="Date de Fin">
+                            <h:outputText value="#{vacation.endDate}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column headerText="Motif">
+                            <h:outputText value="#{vacation.comment}" />
+                        </p:column>
+                        <p:column headerText="Statut">
+                            <h:outputText value="#{vacation.status}" />
+                        </p:column>
+                        <p:column headerText="Actions">
+                            <p:commandButton value="Approuver" icon="pi pi-check" action="#{vacationController.validateVacation(vacation.id, true)}" update=":vacationListForm:vacationTable" rendered="#{vacation.status eq 'EN ATTENTE'}" style="color: #19cc19;" />
+                            <p:commandButton value="Rejeter" icon="pi pi-times" action="#{vacationController.validateVacation(vacation.id, false)}" update=":vacationListForm:vacationTable" rendered="#{vacation.status eq 'EN ATTENTE'}" style="color: #c02929;" />
+                        </p:column>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+        </p:outputPanel>
+    </ui:define>
+</ui:composition>
+</html>

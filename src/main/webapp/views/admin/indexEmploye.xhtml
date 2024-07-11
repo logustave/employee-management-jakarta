@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/resources/tpl/adminEmploye.xhtml">
+    <ui:define name="title">
+        <title>Dashboard</title>
+    </ui:define>
+    <ui:define name="main">
+        <p:outputPanel id="container" styleClass="containerDashboard">
+            <div class="title">
+                Tableau de bord
+            </div>
+            <div class="content">
+                <div class="p-grid">
+                    <div class="p-col-12 p-md-3">
+                        <div class="dashboard-card p-shadow-1">
+                            <p:panelGrid columns="2" styleClass="dashboard-info">
+                                <p:graphicImage name="resources/images/tasks.png" width="50" height="50"/>
+                                <h:outputText value="Congés en attente: #{dashboardBean.pendingLeavesCount}" />
+                            </p:panelGrid>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <div class="dashboard-card p-shadow-1">
+                            <p:panelGrid columns="2" styleClass="dashboard-info">
+                                <p:graphicImage name="resources/images/completed.png" width="50" height="50"/>
+                                <h:outputText value="Employés: #{dashboardBean.totalEmployees}" />
+                            </p:panelGrid>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <div class="dashboard-card p-shadow-1">
+                            <p:panelGrid columns="2" styleClass="dashboard-info">
+                                <p:graphicImage name="resources/images/messages.png" width="50" height="50"/>
+                                <h:outputText value="Nouveaux messages: #{dashboardBean.newMessagesCount}" />
+                            </p:panelGrid>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <div class="dashboard-card p-shadow-1">
+                            <p:panelGrid columns="2" styleClass="dashboard-info">
+                                <p:graphicImage name="resources/images/alerts.png" width="50" height="50"/>
+                                <h:outputText value="Alertes: #{dashboardBean.alertsCount}" />
+                            </p:panelGrid>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-grid">
+                    <div class="p-col-12 p-md-6">
+                        <h3>Derniers Congés</h3>
+                        <div class="dashboard-table-card p-shadow-1">
+                            <p:dataTable var="conge" value="#{dashboardBean.latestLeaves}" styleClass="dashboard-table">
+                                <p:column headerText="Employé">
+                                    <h:outputText value="#{conge.employe.nom}" />
+                                </p:column>
+                                <p:column headerText="Date Début">
+                                    <h:outputText value="#{conge.dateDebut}" />
+                                </p:column>
+                                <p:column headerText="Date Fin">
+                                    <h:outputText value="#{conge.dateFin}" />
+                                </p:column>
+                                <p:column headerText="Statut">
+                                    <h:outputText value="#{conge.statut}" />
+                                </p:column>
+                            </p:dataTable>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-6">
+                        <h3>Messages Récents</h3>
+                        <div class="dashboard-table-card p-shadow-1">
+                            <p:dataTable var="message" value="#{dashboardBean.recentMessages}" styleClass="dashboard-table">
+                                <p:column headerText="Sujet">
+                                    <h:outputText value="#{message.sujet}" />
+                                </p:column>
+                                <p:column headerText="Contenu">
+                                    <h:outputText value="#{message.contenu}" />
+                                </p:column>
+                                <p:column headerText="Date">
+                                    <h:outputText value="#{message.dateEnvoi}" />
+                                </p:column>
+                            </p:dataTable>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p:outputPanel>
+    </ui:define>
+</ui:composition>
+</html>

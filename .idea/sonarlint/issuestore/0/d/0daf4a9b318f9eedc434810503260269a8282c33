@@ -1,0 +1,15 @@
+
+Š
+java:S6813"BRemove this field injection and use constructor injection instead.(Áº–üÿÿÿÿ8ºñô–Š2J$a7cb3534-2c6e-4ec7-bdbd-20f911ca26bf
+Š
+java:S6813"BRemove this field injection and use constructor injection instead.(Áº–üÿÿÿÿ8—×ş–Š2J$e62c8338-8137-42dd-b67b-3518f5f974d3
+m
+java:S1948"%Make "log" transient or serializable.(•Ù¿‡ùÿÿÿÿ8³Ìõ–Š2J$cdf57493-fe8e-412b-9829-3efe772ab002
+z
+java:S1948"2Make "selectedVacation" transient or serializable.(öİ¶éÿÿÿÿÿ8Ö¨ÿ–Š2J$51f29d28-a9fa-4576-9f1e-c7743bbe5f4b
+u
+java:S1948 "-Make "newVacation" transient or serializable.(ÔªûÄıÿÿÿÿ8åèó–Š2J$f1d5cec3-4401-499b-9b78-c5df5a0d3b4e
+u
+java:S1948!"2Make "pendingVacations" transient or serializable.(ªãŸˆ8åèó–Š2J$d27198a6-e4c0-4471-b38f-8ac86fe4ce28
+n
+java:S1168N"+Return an empty collection instead of null.(¥¹ï8êèó–Š2J$11d188a4-747e-4a4e-b257-0c0d736f8829

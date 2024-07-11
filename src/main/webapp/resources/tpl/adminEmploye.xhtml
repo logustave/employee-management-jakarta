@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <ui:insert name="title">
+        <title>Employer</title>
+    </ui:insert>
+    <h:outputStylesheet library="css" name="main.css"/>
+    <h:outputStylesheet library="css" name="primeflex.min.css"/>
+    <h:outputStylesheet library="css" name="theme.css"/>
+</h:head>
+<h:body>
+    <h:form id="mainForm">
+        <div class="header p-shadow-8" style="background: linear-gradient(to right, #c02929, #de8282);">
+            <h3 style="float: right; color: white;">
+                Bonjour <h:outputText value="#{sessionScope['username']}" style="font-weight: bold;"/>
+            </h3>
+        </div>
+        <div class="sidebar p-shadow-4" style="background-color: #c02929 !important; color: #f8f9fa; width: 250px; position: fixed; height: 100%; padding: 10px;">
+            <h3 style="text-align: center; padding-bottom: 20px;">Menu Principal</h3>
+            <div style="display: flex; justify-content: center">
+                <div>
+                    <p:menu styleClass="menu blur">
+                        <p:menuitem icon="pi pi-home" value="Tableau de bord" outcome="/views/admin/indexEmploye.xhtml"/>
+                        <p:menuitem icon="pi pi-users" value="Demande Congé" outcome="/views/admin/employe/DemandeConge.xhtml"/>
+                        <p:separator/>
+                        <p:menuitem icon="pi pi-calendar" value="Historique demande congé" outcome="/views/admin/employe/historiqueConge.xhtml"/>
+                    </p:menu>
+                    <p:menu styleClass="menu blur" style="position: absolute; bottom: 10px; background-color: #c02929">
+                        <p:menuitem icon="pi pi-sign-out" value="Se déconnecter" action="#{loginController.logout}"/>
+                    </p:menu>
+                </div>
+            </div>
+        </div>
+        <div id="main" style="margin-left: 250px; padding-top: 35px; padding-left: 20px;">
+            <ui:insert name="main">
+                <div style="padding: 20px; background-color: #ffffff; border-radius: 5px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+                    <h2 style="color: #343a40;">Contenu Principal</h2>
+                    <p>Voici la page principale où les diverses sections de gestion seront affichées.</p>
+                </div>
+            </ui:insert>
+        </div>
+    </h:form>
+</h:body>
+</html>
