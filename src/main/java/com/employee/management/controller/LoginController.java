@@ -1,14 +1,12 @@
 package com.employee.management.controller;
 
 import com.employee.management.model.Employee;
-import com.employee.management.model.Manager;
 import com.employee.management.service.EmployeeServiceImpl;
 import com.employee.management.service.ManagerService;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
-import java.util.List;
 
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;

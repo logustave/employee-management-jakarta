@@ -1,15 +1,15 @@
 
 ƒ
-java:S6813"BRemove this field injection and use constructor injection instead.(Áº–üÿÿÿÿJ$cb6af216-2879-4073-8bdc-ad3c67e0fba6
+java:S6813"BRemove this field injection and use constructor injection instead.(Áº–üÿÿÿÿJ$de967a7e-f618-40ee-8eed-326be32168de
 ƒ
-java:S6813"BRemove this field injection and use constructor injection instead.(Áº–üÿÿÿÿJ$623ebe24-72d8-42fd-b73a-9ea4df7ea3ff
+java:S6813"BRemove this field injection and use constructor injection instead.(Áº–üÿÿÿÿJ$7149dd9a-dcc4-4367-9b90-96f94f86bce4
 f
-java:S1948"%Make "log" transient or serializable.(•Ù¿‡ùÿÿÿÿJ$3e625c66-2b1c-4e6e-b6c7-ab63a810b309
+java:S1948"%Make "log" transient or serializable.(•Ù¿‡ùÿÿÿÿJ$efeef37f-7dba-4865-b2b5-7ff92558ac99
 s
-java:S1948"2Make "selectedVacation" transient or serializable.(öİ¶éÿÿÿÿÿJ$7e205869-4fa8-4405-ba0f-43ca4a327e3c
+java:S1948"2Make "selectedVacation" transient or serializable.(öİ¶éÿÿÿÿÿJ$01eeb6a6-3d58-4cc3-a9f6-9e15cfa11e0e
 n
-java:S1948 "-Make "newVacation" transient or serializable.(ÔªûÄıÿÿÿÿJ$1cf3fab7-af4a-4f33-b101-7fd0af539351
+java:S1948 "-Make "newVacation" transient or serializable.(ÔªûÄıÿÿÿÿJ$4e13e67a-dd4f-46bf-9741-130169b6b777
 n
-java:S1948!"2Make "pendingVacations" transient or serializable.(ªãŸˆJ$1e0428bc-da40-411d-9958-861a86016f44
+java:S1948!"2Make "pendingVacations" transient or serializable.(ªãŸˆJ$462499c7-3d5e-4e39-898a-617f72bf29b5
 g
-java:S1168U"+Return an empty collection instead of null.(¥¹ïJ$f5c63256-bbc4-476f-b520-a26fec33ae8e
+java:S1168U"+Return an empty collection instead of null.(¥¹ïJ$787b65b3-5eb8-4ac6-bb22-0d28c9cdb8ab
