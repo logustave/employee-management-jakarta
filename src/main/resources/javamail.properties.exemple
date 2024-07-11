@@ -1,6 +1,6 @@
 mail.smtp.auth=true
 mail.smtp.starttls.enable=true
-mail.smtp.host=smtp.zoho.com
+mail.smtp.host=xxxx
 mail.smtp.port=587
-mail.smtp.user=no-reply@zoebusinessplan.com
-mail.smtp.password=V&bHJBr64eNd>e7
+mail.smtp.user=xxxx
+mail.smtp.password=xxx
