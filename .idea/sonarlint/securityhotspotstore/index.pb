@@ -31,3 +31,6 @@ r
 Bsrc/main/java/com/employee/management/service/VacationService.java,f\e\fe96b9cc243fdcfb148c3b4bf47a11ae0d496e24
 o
 ?src/main/java/com/employee/management/service/EmailService.java,1\d\1dba6924a66a5988faf1f777eafe66962b1405e5
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
